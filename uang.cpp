@@ -1,6 +1,5 @@
 #include <iostream>
 #include <fstream>
-#include <string>
 
 using namespace std;
 //ngedit uang, nambah uang, ngurangin uang, nukar bak ke uang asli dan sebaliknya
@@ -22,7 +21,7 @@ int main()
 		uang.open("data.bin", ios::binary | ios::in | ios::out | ios::trunc);
 	}
 
-	int pilihan = 1;
+	int pilihan = 1;	
 
 	cout << "===================UANG MILIK ANDA================" << endl;
 	cout << "1. Mengubah 	Uang Asli" << endl;
@@ -39,8 +38,7 @@ int main()
 	uang.read(reinterpret_cast<char*>(&hasilKeluaran), sizeof(tabungan));
 	cout << "UANG TOTAL	: " << hasilKeluaran.uangAsli + hasilKeluaran.uangBank << endl;
 	cout << "UANG ASLI 	: " << hasilKeluaran.uangAsli << endl;
-	cout << "UANG BANK 	: " << hasilKeluaran.uangBank << endl;
-	
+	cout << "UANG BANK 	: " << hasilKeluaran.uangBank << endl;	
 	uang.close();
 
 	cout << "==================================================" << endl;
